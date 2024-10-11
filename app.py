@@ -6,7 +6,7 @@ app,rt = fast_app(pico=False,
                   ))
 
 @rt('/')
-def get(): return Div(P('Hello World!'), cls="circle", hx_get="/change")
+def get(): return Div(P(''), cls="circle", hx_get="/change")
 
 
 @rt('/change')
