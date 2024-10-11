@@ -6,10 +6,11 @@ app,rt = fast_app(pico=False,
                   ))
 
 @rt('/')
-def get(): return Div(P(''), cls="circle", hx_get="/change")
+def get(): return Div(Div(P(''), cls="circle", hx_get="/change"), Div(P('Starship "Heart of Gold"'), hx_swap_oob=True, id="credit", cls='footer'))
 
 
 @rt('/change')
-def get(): return P('Please do not press this button again')
+def get(): return P('Please do not press this button again'), Div('Hitchhikers Guide to the Galaxy, by Douglas Adams.', hx_swap_oob='innerHTML:#credit')
+
 
 serve()
